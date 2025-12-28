@@ -6,7 +6,8 @@ using Serilog;
 namespace WhereMyWinCursor.Core.Config;
 
 public static class ConfigManager {
-    private const string path = "./config.json";
+    private static readonly string path = Path.Combine(AppContext.BaseDirectory, "config.json");
+
     private static readonly JsonSerializerOptions options = new() {
         WriteIndented = true
     };
@@ -53,7 +54,8 @@ public static class ConfigManager {
 
             if (prop.PropertyType.IsClass && prop.PropertyType != typeof(string)) {
                 //递归获取子对象
-                var mergeMethod = typeof(ConfigManager).GetMethod(nameof(MergeWithDefaults), BindingFlags.NonPublic | BindingFlags.Static);
+                var mergeMethod = typeof(ConfigManager).GetMethod(nameof(MergeWithDefaults),
+                    BindingFlags.NonPublic | BindingFlags.Static);
                 var genericMergeMethod = mergeMethod!.MakeGenericMethod(prop.PropertyType);
 
                 var subLoaded = loadedValue ?? Activator.CreateInstance(prop.PropertyType);
