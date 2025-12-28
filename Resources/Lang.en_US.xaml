@@ -1,0 +1,40 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+
+    <sys:String x:Key="Setting">Setting</sys:String>
+    <sys:String x:Key="Appearance">Appearance</sys:String>
+    <sys:String x:Key="App-Theme">App theme</sys:String>
+    <sys:String x:Key="SelectWhichAppThemeToDisplay">Select which app theme to display</sys:String>
+
+    <sys:String x:Key="Language">Language</sys:String>
+    <sys:String x:Key="SelectWhichLanguageToDisplay">Select which language to display</sys:String>
+
+    <sys:String x:Key="Behavior">Behavior</sys:String>
+    <sys:String x:Key="StartWithComputerLaunch">Start with computer launch</sys:String>
+    <sys:String x:Key="StartTheAppWhenTheComputerHasLaunched">Auto start the App when the computer has launched</sys:String>
+
+    <sys:String x:Key="Cursor">Cursor</sys:String>
+    <sys:String x:Key="InitialSize">Initial Size</sys:String>
+    <sys:String x:Key="TheInitialCursorSizeDefaultsTo32">The initial cursor size defaults to 32</sys:String>
+    <sys:String x:Key="MaxSize">Max Size</sys:String>
+    <sys:String x:Key="TheMaxCursorSizeDefaultsTo128">The max cursor size defaults to 128</sys:String>
+
+    <sys:String x:Key="Animation">Animation</sys:String>
+    <sys:String x:Key="AStep">Step</sys:String>
+    <sys:String x:Key="AnimationStep">Animated stepping</sys:String>
+    <sys:String x:Key="Delay">Delay</sys:String>
+    <sys:String x:Key="TheDelayBetweenAnimationStep">The delay between animation step (ms); use the 'Task.Yield()' if value equal 0</sys:String>
+
+    <sys:String x:Key="PauseTime">Pause Time</sys:String>
+    <sys:String x:Key="PauseTimeForRestore">Pause time for restore (ms)</sys:String>
+
+    <sys:String x:Key="Tray_Open_Setting">Open Settings</sys:String>
+    <sys:String x:Key="Tray_Exit">Exit</sys:String>
+
+    <sys:String x:Key="About">About</sys:String>
+    <sys:String x:Key="Version">Version</sys:String>
+    <sys:String x:Key="AboutDescription">A utility to help you find your Windows cursor</sys:String>
+    <sys:String x:Key="AboutOpenTheRepositories">Open the repositories on Github</sys:String>
+</ResourceDictionary>

@@ -1,0 +1,259 @@
+﻿<Page
+     x:Class="WhereMyWinCursor.UI.Pages.SettingPage"
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+     Title="SettingsPage"
+
+     d:DesignWidth="800"
+     ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+     ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+     Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+     mc:Ignorable="d"
+ >
+
+    <Grid>
+        <StackPanel Margin="40,25,40,24">
+
+            <ui:TextBlock
+                Margin="0,0,0,40"
+                FontTypography="BodyStrong"
+                FontSize="30"
+                Text="{DynamicResource Setting}"
+            />
+
+            <ui:TextBlock
+                Margin="0,0,0,8"
+                FontTypography="BodyStrong"
+                Text="{DynamicResource Appearance}" />
+
+            <ui:CardControl Margin="0,0,0,12" Icon="{ui:SymbolIcon Color24}">
+                <ui:CardControl.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ui:TextBlock
+                            Grid.Row="0"
+                            FontTypography="Body"
+                            Text="{DynamicResource App-Theme}" />
+                        <ui:TextBlock
+                            Grid.Row="1"
+                            Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"
+                            Text="{DynamicResource SelectWhichAppThemeToDisplay}" />
+                    </Grid>
+
+                </ui:CardControl.Header>
+                <ComboBox
+                    MinWidth="200"
+                    SelectedIndex="{Binding ThemeIndex, Mode=TwoWay}">
+                    <ComboBoxItem Content="System" />
+                    <ComboBoxItem Content="Dark" />
+                    <ComboBoxItem Content="Light" />
+                </ComboBox>
+            </ui:CardControl>
+
+            <ui:CardControl Margin="0,0,0,12" Icon="{ui:SymbolIcon LocalLanguage24}">
+                <ui:CardControl.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ui:TextBlock
+                            Grid.Row="0"
+                            FontTypography="Body"
+                            Text="{DynamicResource Language}" />
+                        <ui:TextBlock
+                            Grid.Row="1"
+                            Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"
+                            Text="{DynamicResource SelectWhichLanguageToDisplay}" />
+                    </Grid>
+
+                </ui:CardControl.Header>
+                <ComboBox
+                    MinWidth="200"
+                    SelectedIndex="{Binding LanguageIndex, Mode=TwoWay}">
+                    <ComboBoxItem Content="System" />
+                    <ComboBoxItem Content="English" />
+                    <ComboBoxItem Content="Chinese (Simplified)" />
+                </ComboBox>
+            </ui:CardControl>
+
+            <ui:TextBlock
+                Margin="0,24,0,8"
+                FontTypography="BodyStrong"
+                Text="{DynamicResource Behavior}" />
+
+            <ui:CardControl Margin="0,0,0,12" Icon="{ui:SymbolIcon Power24}">
+                <ui:CardControl.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ui:TextBlock
+                            Grid.Row="0"
+                            FontTypography="Body"
+                            Text="{DynamicResource StartWithComputerLaunch}" />
+                        <ui:TextBlock
+                            Grid.Row="1"
+                            Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"
+                            Text="{DynamicResource StartTheAppWhenTheComputerHasLaunched}" />
+                    </Grid>
+
+                </ui:CardControl.Header>
+                <ui:ToggleSwitch IsChecked="{Binding StartWithWindows, Mode=TwoWay}" OffContent="Off" OnContent="On"/>
+            </ui:CardControl>
+
+            <ui:TextBlock
+                Margin="0,24,0,8"
+                FontTypography="BodyStrong"
+                Text="{DynamicResource Cursor}" />
+
+            <ui:CardControl Margin="0,0,0,12" Icon="{ui:SymbolIcon Cursor24}">
+                <ui:CardControl.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ui:TextBlock
+                            Grid.Row="0"
+                            FontTypography="Body"
+                            Text="{DynamicResource InitialSize}" />
+                        <ui:TextBlock
+                            Grid.Row="1"
+                            Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"
+                            Text="{DynamicResource TheInitialCursorSizeDefaultsTo32}" />
+                    </Grid>
+
+                </ui:CardControl.Header>
+                <ui:NumberBox
+                    Icon="{ui:SymbolIcon NumberSymbolSquare24}"
+                    MaxDecimalPlaces="0"
+                    Maximum="999"
+                    Minimum="0"
+                    SmallChange="1"
+                    SpinButtonPlacementMode="Compact"
+                    Value="{Binding InitialSize, Mode=TwoWay}" />
+            </ui:CardControl>
+            <ui:CardControl Margin="0,0,0,12" Icon="{ui:SymbolIcon ArrowMaximize24}">
+                <ui:CardControl.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ui:TextBlock
+                            Grid.Row="0"
+                            FontTypography="Body"
+                            Text="{DynamicResource MaxSize}" />
+                        <ui:TextBlock
+                            Grid.Row="1"
+                            Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"
+                            Text="{DynamicResource TheMaxCursorSizeDefaultsTo128}" />
+                    </Grid>
+
+                </ui:CardControl.Header>
+                <ui:NumberBox
+                    Icon="{ui:SymbolIcon NumberSymbolSquare24}"
+                    MaxDecimalPlaces="0"
+                    Maximum="999"
+                    Minimum="0"
+                    SmallChange="1"
+                    SpinButtonPlacementMode="Compact"
+                    Value="{Binding MaxSize, Mode=TwoWay}" />
+            </ui:CardControl>
+                        <ui:TextBlock
+                Margin="0,24,0,8"
+                FontTypography="BodyStrong"
+                Text="{DynamicResource Animation}" />
+
+            <ui:CardControl Margin="0,0,0,12" Icon="{ui:SymbolIcon CubeQuick24}">
+                <ui:CardControl.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ui:TextBlock
+                            Grid.Row="0"
+                            FontTypography="Body"
+                            Text="{DynamicResource AStep}" />
+                        <ui:TextBlock
+                            Grid.Row="1"
+                            Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"
+                            Text="{DynamicResource AnimationStep}" />
+                    </Grid>
+
+                </ui:CardControl.Header>
+                <ui:NumberBox
+                    Icon="{ui:SymbolIcon NumberSymbolSquare24}"
+                    Maximum="10"
+                    Minimum="1"
+                    SmallChange="1"
+                    SpinButtonPlacementMode="Compact"
+                    Value="{Binding AnimationStep, Mode=TwoWay}" />
+            </ui:CardControl>
+            <ui:CardControl Margin="0,0,0,12" Icon="{ui:SymbolIcon Timer24}">
+                <ui:CardControl.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ui:TextBlock
+                            Grid.Row="0"
+                            FontTypography="Body"
+                            Text="{DynamicResource Delay}" />
+                        <ui:TextBlock
+                            Grid.Row="1"
+
+                            Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"
+                            Text="{DynamicResource TheDelayBetweenAnimationStep}" />
+                    </Grid>
+
+                </ui:CardControl.Header>
+                <ui:NumberBox
+                    Icon="{ui:SymbolIcon NumberSymbolSquare24}"
+                    MaxDecimalPlaces="0"
+                    Maximum="999"
+                    Minimum="0"
+                    SmallChange="1"
+                    SpinButtonPlacementMode="Compact"
+                    Value="{Binding AnimationDelay, Mode=TwoWay}" />
+            </ui:CardControl>
+            <ui:CardControl Margin="0,0,0,12" Icon="{ui:SymbolIcon TimerOff24}">
+                <ui:CardControl.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ui:TextBlock
+                            Grid.Row="0"
+                            FontTypography="Body"
+                            Text="{DynamicResource PauseTime}" />
+                        <ui:TextBlock
+                            Grid.Row="1"
+
+                            Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"
+                            Text="{DynamicResource PauseTimeForRestore}" />
+                    </Grid>
+
+                </ui:CardControl.Header>
+                <ui:NumberBox
+                    Icon="{ui:SymbolIcon NumberSymbolSquare24}"
+                    MaxDecimalPlaces="0"
+                    Minimum="0"
+                    SmallChange="1"
+                    SpinButtonPlacementMode="Compact"
+                    Value="{Binding PauseTime, Mode=TwoWay}" />
+            </ui:CardControl>
+        </StackPanel>
+    </Grid>
+</Page>

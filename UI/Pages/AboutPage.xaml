@@ -1,0 +1,65 @@
+﻿<Page
+    x:Class="WhereMyWinCursor.UI.Pages.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Title="AboutPage"
+
+    d:DesignWidth="800"
+    ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+    ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    mc:Ignorable="d"
+>
+    <Grid>
+        <StackPanel Margin="40,25,40,24">
+            <Image Height="100" Width="100" Source="/Resources/icon.ico" Margin="0,0,0,20"/>
+
+            <TextBlock Text="{Binding AppName}"
+                       HorizontalAlignment="Center"
+                       FontSize="30"
+                       FontWeight="Bold"
+                       Margin="0,0,0,10"/>
+
+            <TextBlock Text="{DynamicResource AboutDescription}"
+                       HorizontalAlignment="Center"
+                       FontSize="13"
+                       Margin="0,0,0,10"/>
+
+            <TextBlock Text="{Binding AppVersion}"
+                       HorizontalAlignment="Center"
+                       FontSize="16"
+                       Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                       Margin="0,0,0,20"/>
+
+            <ui:Anchor
+                Margin="0"
+                Padding="16"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Stretch"
+                Background="Transparent"
+                BorderThickness="0,1,0,0"
+                CornerRadius="0"
+                NavigateUri="https://github.com/lepoco/wpfui/issues/new/choose">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="{DynamicResource AboutOpenTheRepositories}" />
+                    <ui:SymbolIcon Grid.Column="1" Symbol="Link24" />
+                </Grid>
+            </ui:Anchor>
+
+            <TextBlock Text="{Binding Copyright}"
+                       HorizontalAlignment="Center"
+                       FontSize="12"
+                       Foreground="{DynamicResource TextFillColorTertiaryBrush}"
+                       Margin="0,10,0,0"/>
+
+        </StackPanel>
+
+    </Grid>
+</Page>
