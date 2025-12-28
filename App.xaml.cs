@@ -142,8 +142,8 @@ public partial class App : Application {
 
     public void StartCursorAccelerationMonitor() {
         DateTime lastTime = DateTime.Now;
-        int counter = 0;
-        int counterLimit = 4;
+        double counter = 0;
+        double counterLimit = 4;
         int lastX = 0;
         int x = 0;
         int lastDirection = 0;
@@ -168,8 +168,11 @@ public partial class App : Application {
                 //Log.Debug("X:"+x.ToString());
                 //Log.Debug("位移:"+dx.ToString());
                 if (direction != lastDirection && Math.Abs(dx) >=10) {
-                    counter++;
+                    var weight = Math.Abs(dx) * 0.03;
+                    counter = 1 + weight ;
                     lastDirection = direction;
+                    Log.Debug("dx："+dx.ToString());
+                    Log.Debug("weight:" + weight.ToString());
                 }
 
                 if (counter >= counterLimit) {
