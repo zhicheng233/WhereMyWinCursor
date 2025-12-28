@@ -41,7 +41,7 @@ jobs:
         dotnet publish WhereMyWinCursor.sln `
           -c ${{ matrix.configuration }} `
           -r win-x64 `
-          --self-contained true `
+          --self-contained false `
           -p:PublishSingleFile=true `
           -p:PublishReadyToRun=true `
           -p:IncludeNativeLibrariesForSelfExtract=true `
