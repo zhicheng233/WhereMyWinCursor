@@ -143,7 +143,7 @@ public partial class App : Application {
     public void StartCursorAccelerationMonitor() {
         DateTime lastTime = DateTime.Now;
         double counter = 0;
-        double counterLimit = 4;
+        double counterLimit = 5;
         int lastX = 0;
         int x = 0;
         int lastDirection = 0;
@@ -156,7 +156,7 @@ public partial class App : Application {
 
         Task.Run(() => {
             while (true) {
-                Thread.Sleep(30);
+                Thread.Sleep(20);
 
                 int dx = x - lastX;
                 lastX = x;
@@ -168,7 +168,7 @@ public partial class App : Application {
                 //Log.Debug("X:"+x.ToString());
                 //Log.Debug("位移:"+dx.ToString());
                 if (direction != lastDirection && Math.Abs(dx) >=10) {
-                    var weight = Math.Abs(dx) * 0.03;
+                    var weight = Math.Abs(dx) * 0.02;
                     counter = 1 + weight ;
                     lastDirection = direction;
                     Log.Debug("dx："+dx.ToString());
@@ -184,7 +184,7 @@ public partial class App : Application {
         //超过一定时间后重置计数器
         Task.Run(() => {
             while (true) {
-                Thread.Sleep(400);
+                Thread.Sleep(450);
                 Log.Debug(counter.ToString());
                 counter = 0;
             }
