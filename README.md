@@ -12,7 +12,7 @@
   <img src="https://img.shields.io/badge/.NET-9.0-blue" alt=".NET 9.0">
   <img src="https://img.shields.io/badge/Platform-Windows-blue" alt="Windows">
   <img src="https://img.shields.io/badge/Version-1.0.0-green" alt="Version">
-  <img src="https://img.shields.io/badge/License-GNU%20V3.0-yellow" alt="License">
+  <img src="https://img.shields.io/badge/License-GPL%20V3.0-yellow" alt="License">
 </p>
 
 <p align="center">
@@ -21,6 +21,7 @@
 <p align="center">
 <a href="README_zh-CN.md">简体中文</a>
 </p>
+
 ## ✨ Features
 
 - 🖱️ **Quick Cursor Locator** - Shake your mouse rapidly to trigger a cursor enlargement animation
