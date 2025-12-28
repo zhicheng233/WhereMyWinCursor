@@ -45,13 +45,13 @@
 ## 📥 Installation
 
 ### Option 1: Download Release
-Download the latest release from the [Releases](https://github.com/your-username/WhereMyWinCursor/releases) page.
+Download the latest release from the [Releases](https://github.com/zhicheng233/WhereMyWinCursor/releases) page.
 
 ### Option 2: Build from Source
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/WhereMyWinCursor.git
+git clone https://github.com/zhicheng233/WhereMyWinCursor.git
 
 # Navigate to the project directory
 cd WhereMyWinCursor

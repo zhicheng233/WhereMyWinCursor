@@ -42,13 +42,13 @@
 ## 📥 安装方式
 
 ### 方式一：下载发行版
-从 [Releases](https://github.com/your-username/WhereMyWinCursor/releases) 页面下载最新版本。
+从 [Releases](https://github.com/zhicheng233/WhereMyWinCursor/releases) 页面下载最新版本。
 
 ### 方式二：从源码构建
 
 ```bash
 # 克隆仓库
-git clone https://github.com/your-username/WhereMyWinCursor.git
+git clone https://github.com/zhicheng233/WhereMyWinCursor.git
 
 # 进入项目目录
 cd WhereMyWinCursor
