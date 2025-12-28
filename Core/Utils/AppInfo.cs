@@ -6,13 +6,26 @@ public static class AppInfo {
     private static readonly Assembly Assembly = Assembly.GetExecutingAssembly();
 
     /// <summary>
-    /// Get the application version number (format: v1.0.0)
+    /// Get the application version number (format: v1.0.0 or v1.0.0-hash)
     /// </summary>
     public static string Version {
         get {
-            var version = Assembly.GetName().Version;
-            return version != null
-                ? $"v{version.Major}.{version.Minor}.{version.Build}"
+            // 优先读取 InformationalVersion（包含哈希后缀）
+            var infoVersion = Assembly
+                .GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
+
+            if (!string.IsNullOrEmpty(infoVersion))
+            {
+                // 移除 SourceLink 附加的 +hash 部分，保留 -suffix 部分
+                var plusIndex = infoVersion.IndexOf('+');
+                var version = plusIndex > 0 ? infoVersion[..plusIndex] : infoVersion;
+                return $"v{version}";
+            }
+
+            // 回退到 AssemblyVersion
+            var ver = Assembly.GetName().Version;
+            return ver != null
+                ? $"v{ver.Major}.{ver.Minor}.{ver.Build}"
                 : "v1.0.0";
         }
     }
