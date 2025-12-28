@@ -117,6 +117,12 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+![Alt](https://repobeats.axiom.co/api/embed/ad8d7771b0760a21a30b5db2a001c74029151f83.svg "Repobeats analytics image")
+
+<a style="margin-top: 15px" href="https://github.com/zhicheng233/WhereMyWinCursor/graphs/contributors">
+<img src="https://contrib.rocks/image?repo=zhicheng233/WhereMyWinCursor" />
+</a>
+
 ## 📄 License
 
 This project is licensed under the GNU General Public License v3.0  License - see the [LICENSE](LICENSE) file for details.

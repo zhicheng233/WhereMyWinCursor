@@ -114,6 +114,12 @@ WhereMyWinCursor/
 4. 推送到分支 (`git push origin feature/AmazingFeature`)
 5. 打开一个 Pull Request
 
+![Alt](https://repobeats.axiom.co/api/embed/ad8d7771b0760a21a30b5db2a001c74029151f83.svg "Repobeats analytics image")
+
+<a style="margin-top: 15px" href="https://github.com/zhicheng233/WhereMyWinCursor/graphs/contributors">
+<img src="https://contrib.rocks/image?repo=zhicheng233/WhereMyWinCursor" />
+</a>
+
 ## 📄 开源许可
 
 本项目采用 GNU 通用公共许可证 v3.0 进行许可 - 详情请参阅 [LICENSE](LICENSE) 文件。
